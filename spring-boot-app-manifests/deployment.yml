@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: spring-boot-app
-        image: rama2510/rks-docker-repo:replaceImageTag
+        image: rama2510/rks-docker-repo:5
         ports:
         - containerPort: 8080

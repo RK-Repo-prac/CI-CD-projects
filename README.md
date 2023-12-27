@@ -78,11 +78,15 @@ Initially, the default admin username and password can be used to log into Sonar
 
 Define and Configure Jenkins Pipeline Stages
 
-Stage Checkout - Check out code from Git repository
+Stage Checkout - Check out code from Git repository 
 Stage Build and Test - Build project and run tests
 Stage Static Code Analysis - Run static code analysis with SonarQube
 Stage Build and Push Docker Image - Build Docker Stage image and push to registry
 Stage Update Deployment File - Update Kubernetes deployment file with new image tag and commit changes
+
+Note: Here I skipped the checkout part since ,Jenkins project configuration has SCM details to clone a git repo.
+When Jenkins starts the pipeline, it first clones the repo to its own host workspace,then Jenkins launches the Docker agent, and mounts this workspace into the container. So the git repo already exists in the mounted location inside docker
+Therefore, pipeline stages do not need to explicitly checkout again
 
 ### Step 6
 
